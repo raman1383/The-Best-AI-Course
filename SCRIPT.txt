@@ -21,5 +21,3 @@ Neural Networks:
         x:
 
         y:
-
-        z: 
