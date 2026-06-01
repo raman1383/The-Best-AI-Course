@@ -3,6 +3,46 @@ The Best AI Course
 
 Neural Networks:
 
+    Neural Networks are magical things!
+
+    screenPlay:
+
+        SHOW: 
+            reveal lots of differently written 7s in MNIST, 
+        TELL:
+            your brain recognizes all of these as 7s, but how?
+            none of them are exactlly alike, all different, but
+            somehow the same!
+
+
+        SHOW: 
+            image pixels into colored cubes, each valued 0-255
+        TELL:
+            here is the problem you need to solve:
+            a banking company has hired you to solve a problem 
+            they've been having, each day there are millions of cheques 
+            and hand-written documents that come in, and their information
+            needs to be fed into the computers, costumers are unhappy because 
+            the work is slow! the bank employees cannot enter the hand-written 
+            information into the computers fast enough!
+
+            solve this porblem and you will get paid lots of money!
+
+
+        SHOW:
+            .
+        TELL:
+             
+
+        SHOW:
+        TELL: 
+
+        SHOW:
+        TELL: 
+
+
+
+
     Q4AI:
 
         How to install the python programming language on my system?
@@ -21,3 +61,52 @@ Neural Networks:
         x:
 
         y:
+
+
+
+    Classify MNIST, Generate MNIST:
+
+
+    AutoGrad & Tensor Ops:
+
+        build "from skratch" before using Pytorch 
+
+
+    Projects:
+
+        single & multivariate regression:
+            
+            house price:
+
+            child height:
+
+            chemical props:
+
+
+        binary & multi-class Classification:
+        
+            Credit card fraud detection 
+
+            Classification of MNIST hand-written images dataset:
+
+            Face Emotion Recognition(FER2013):
+
+
+        Auto-Encoders:
+
+            My Face in Latent Space:
+
+                dataset generation:
+                    record a 2-3 minute video cycling through expressions (happy, 
+                    sad, angry, surprised, neutral, etc.).
+
+                Pre-train on FER-2013 48*48 ?
+
+
+            Reconstruction & KL Divergence Loss
+
+            β-VAE:
+                disentangled representations
+                interpretable latent variables
+
+
