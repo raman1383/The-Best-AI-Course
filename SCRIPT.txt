@@ -11,7 +11,7 @@ Neural Networks:
             reveal lots of differently written 7s in MNIST, 
         TELL:
             your brain recognizes all of these as 7s, but how?
-            none of them are exactlly alike, all different, but
+            none of them are exactly alike, all different, but
             somehow the same!
 
 
@@ -21,25 +21,181 @@ Neural Networks:
             here is the problem you need to solve:
             a banking company has hired you to solve a problem 
             they've been having, each day there are millions of cheques 
-            and hand-written documents that come in, and their information
+            & hand-written documents that come in, & their information
             needs to be fed into the computers, costumers are unhappy because 
             the work is slow! the bank employees cannot enter the hand-written 
             information into the computers fast enough!
 
-            solve this porblem and you will get paid lots of money!
+            solve this problem & you will get paid lots of money!
 
 
         SHOW:
-            .
+            xxx
         TELL:
-             
+            the crucial thing about NNs you need to underst& is this:
+            they learn representations of the dataset,
+
+            in one of our later projects we will train a NN to develop a 
+            limited understanding of english words, you will see that it
+            learns to put each word in a special position in 3D space that 
+            as has neighboring points which means similar things, & it 
+            learns that moving in some directions of this space, makes the 
+            word to have more of a certain quality, for example one direction
+            makes the word more feminine or more musculine, other directions 
+            make the world more polite or rude, singular or plurar!
+
+
+
+
+
+        
+
+
 
         SHOW:
+            perceptron, shallow, deep, line, curve, fold
         TELL: 
+            we will start with the simplest possible thing, a single neuron,
+            we will see what can it do, we will play with it & discover its 
+            abilities & limits...
+
+            then we put a few of these neurons in a layer, now we make them
+            work with each other, when they work collectively, they become 
+            more powerful & can solve harder problems, we will play with 
+            them & push them to their limits as well...
+
+            then we reach the boss!
+            we stack multiple layers of these neurons next to each other,
+            the outputs of one layer becomes the inputs of the next layer!
+            these things become super-powerful ! one layer can learn to 
+            solve part of the problem & let other layers take care of the 
+            rest, or learn which parts of the signal to extract & what parts
+            to ignore & not pass on so to make the job of the next layer 
+            easier!
+
+            Actually, a relatively small multi-layer perceptron, can have more
+            linear regions than the number of atoms in the obsurvable universe!
+
 
         SHOW:
+            fitting the sine curve by changing the linear regions
         TELL: 
+            a neuron is a simple function, a NN is a very complicated function
+            made of simple functions
 
+
+
+        SHOW:
+
+        TELL:
+            you feed-in the input, it passes through the model & its 
+            parameters make changes to it, then it gives you an output, what
+            it thinks the right answer should be!
+
+            but it is wrong! 
+            the parameters are not trained to learn the right behavior, so the
+            changes they make are useless this makes the output trash!
+
+            but even the greatest masters gotta start from somewhere:
+            every possible setting of parameters that a NN can possibly have, 
+            form a space, a space of NNs, each NN in this space has a different 
+            behavior becasue its parameters are set differently, we want to find
+            the NN that behaves best on our problem, how do we find it?
+
+            lets imagine we had a function that took our NN's parameters as input
+            & gave us a number back as output, this number tells us how well 
+            our NN performs the task we want it to do, lets call it the 
+            "loss function", becasue if the number we get as output is high, it means
+            our NN behaves badly which leads to a large loss, the function asks our 
+            NN questions & more wrong answers it gives, more money we lose, 
+
+            now that we have a way of telling a good NN from a bad NN, how do we find
+            the best NN possible?
+
+            you can just initialize parameters at random & l& at different places 
+            in this loss landscape, but it is extremely unlikely that a random 
+            initialization lands on a point of low loss(that is, a well behaving NN)
+            so...
+            we need a way to nagigate towards lower loss points
+
+
+        SHOW:
+        TELL:
+            Supervised Learning:
+                Question: How can a model learn a mapping from inputs to known 
+                          correct outputs?
+                Issue: The model needs labeled data, & performance depends 
+                       heavily on label quality & coverage.
+                Example: the input might be the age & mileage of a second-h& car, 
+                         & the output might be the price in dollars.
+
+            Self-Supervised Learning:
+                Question: How can a model learn useful representations from 
+                          unlabeled data by creating its own training signal?
+                Issue: There are no human-provided labels, so the model must 
+                       define proxy tasks that force it to learn meaningful 
+                       structure.
+                Example: Masking words in a sentence & training a model to 
+                         predict the missing words.
+            
+            Un-Supervised Learning:
+                Question: How can a model discover structure in data without labels?
+                Issue: There is no explicit target output, so the model must infer 
+                       patterns such as clusters, latent factors, or compressed 
+                       representations.
+                Example: Grouping customers into segments based only on purchase 
+                         behavior.
+
+            Reinforcement Learning:
+                Question: How can an agent learn what to do by interacting with an 
+                          environment & receiving rewards?
+                Issue: Feedback is delayed, sparse, & depends on sequences of 
+                       actions rather than single predictions.
+                Example: Learning to play a game by trying actions & improving 
+                         based on wins & losses.
+
+
+
+        SHOW:
+        TELL:
+
+        SHOW:
+        TELL:
+            so to calculate the error, to tell the NN how wrong it was, we get our 
+            labes for this example, & see how different the NN's answer is from
+            this example's labels:
+
+            the simplest way is to just subtract the NN's answer from the labels,
+            but that way if one error is too negative & another error is too 
+            positive, they cancel out to give no error! when they should've given 
+            double their individual errors! being in two different ways doesn't 
+            cancel out to being right! 
+
+            so when we subtract the the answer & label, we square the result!
+            this way all the errors become positive so to not cancel-out each other.
+
+            Alright, we subtract the NN's predictions from the labels, then square the 
+            differences, now we have 10 positive numbers each telling us how wrong
+            the NN is in one way or another, we want a single number for our loss 
+            landscape, so we take an average of these 10 losses, sum them up & 
+            divide by how many there are. 
+            the number we get is the NN's loss calculated for a single example.
+
+            This way of calculating loss is called "The Mean Squared Error"
+
+        SHOW:
+        TELL:
+
+        SHOW:
+        TELL:
+
+        SHOW:
+        TELL:
+            Here goes the NN Training loop:
+
+            see where you are -> calc loss for NN
+            see where to go   -> canculate the gradient vector
+            go there          -> update parameters 
 
 
 
@@ -48,9 +204,9 @@ Neural Networks:
         How to install the python programming language on my system?
         
         Teach me the basics of python programming concepts with intuitive & 
-        hands-on exmaples
+        hands-on examples
 
-        What is the Pytorch library, how to install it on my system and check
+        What is the Pytorch library, how to install it on my system & check
         if it is successfully installed
 
 
@@ -62,14 +218,52 @@ Neural Networks:
 
         y:
 
+        why NNs:
+            Although there are thousands of different methods for making computers 
+            act intelligently & learn from data, this perticular set of methods
+            that are based on NNs are by far the most successful approaches, and
+            no matter how clever the other methods are, with enough data & compute,
+            a NN of sufficent size will be able to implement that clever algorithm,
+            even in the extreme, a NN can simulate the mind of the inventor that 
+            came-up with that method or algorithm...
+
+            lets go even further than that, imagine a point in the future that all
+            software is written in NNs, your phone's operating system, apps & websites
+            are all a neural network that takes thouch, voice, images & internet 
+            packets & renders the pixels on your screen or vibrates the speaker!
+
+
+            this vision of all software being in form f a NN is motivated by this:
+            as consumers & businesses we want things bo be efficient, to consume 
+            less & give more, so we write more & more efficient algorithms, 
+            what-ever business has the most efficient systems will win. 
+
+
+            a traditional programmer had to know the rules & inner-workings of that 
+            function which turned inputs into outputs, so the efficiency of the 
+            program was limited by how clever the human programmer was!
+
+            but in the case for NNs, the only thing you need is examples of inputs &
+            outputs, the NN itself during training & learning finds the most efficient
+            algorithm or process & implements it in its parameters !
+
+            this gives rise to the bitter but true saying that:
+                Gradient-Descent is the world's best programmer.
+
+            
+
 
 
     Classify MNIST, Generate MNIST:
+        x:
+            init random network, vis params in Blndr, 
+            feed exmaples & vis activations, vis loss
+            calc, vis gradients 
 
 
     AutoGrad & Tensor Ops:
 
-        build "from skratch" before using Pytorch 
+        build "from scratch" before using Pytorch 
 
 
     Projects:
@@ -108,5 +302,7 @@ Neural Networks:
             β-VAE:
                 disentangled representations
                 interpretable latent variables
+
+            latent space morphing of 0,3,8,9
 
 
